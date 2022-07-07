@@ -10,15 +10,15 @@ export default function AccountScreen() {
       </View>
       <View>
         <Text>About you</Text>
-        <View>dd</View>
+        <View />
       </View>
       <View>
         <Text>Insights</Text>
-        <View>dd</View>
+        <View />
       </View>
       <View>
         <Text>Records</Text>
-        <View>dd</View>
+        <View />
       </View>
     </View>
   );
