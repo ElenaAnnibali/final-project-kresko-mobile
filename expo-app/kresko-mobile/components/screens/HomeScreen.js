@@ -14,7 +14,6 @@ export default function HomeScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.homeScrollView}>
-        <Text>Home Screen</Text>
         {/* first card */}
         <View style={[styles.subContainer, styles.elevation]}>
           <Text style={styles.h3}>How are you felling today?</Text>
@@ -34,13 +33,15 @@ export default function HomeScreen(props) {
         </View>
         {/* third card */}
         <View style={[styles.card, styles.elevation]}>
-          <Image
-            source={require('./meditation.png')}
-            style={styles.journalImage}
-          />
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Take a moment to relax</Text>
-          </TouchableOpacity>
+          <Pressable onPress={() => props.navigation.navigate('Relax')}>
+            <Image
+              source={require('./meditation.png')}
+              style={styles.journalImage}
+            />
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Take a moment to relax</Text>
+            </TouchableOpacity>
+          </Pressable>
         </View>
         <View style={styles.lastCard} />
       </ScrollView>

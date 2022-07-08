@@ -4,11 +4,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AccountScreen from './components/screens/AccountScreen';
+import AngryScreen from './components/screens/Angry';
 import DailyScreen from './components/screens/DailyScreen';
+import FineScreen from './components/screens/Fine';
+import GreatScreen from './components/screens/Great';
 import HomeScreen from './components/screens/HomeScreen';
 import LoginScreen from './components/screens/Login';
+import LoveScreen from './components/screens/Love';
 import MoodScreen from './components/screens/MoodScreen';
 import RegisterScreen from './components/screens/Register';
+import RelaxScreen from './components/screens/RelaxScreen';
+import SadScreen from './components/screens/Sad';
+import TiredScreen from './components/screens/Tired';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Tab = createBottomTabNavigator();
@@ -103,6 +110,13 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Main" component={MainNavigator} />
         <Stack.Screen name="Mood" component={MoodScreen} />
+        <Stack.Screen name="Relax" component={RelaxScreen} />
+        <Stack.Screen name="Angry" component={AngryScreen} />
+        <Stack.Screen name="Sad" component={SadScreen} />
+        <Stack.Screen name="Tired" component={TiredScreen} />
+        <Stack.Screen name="Fine" component={FineScreen} />
+        <Stack.Screen name="Great" component={GreatScreen} />
+        <Stack.Screen name="Love" component={LoveScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -6,22 +6,22 @@ export default function MoodScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.h2}>Hello, how are how today?</Text>
-      <Pressable onPress={() => props.navigation.navigate('SignIn')}>
+      <Pressable onPress={() => props.navigation.navigate('Sad')}>
         <Image source={require('./sad.png')} style={styles.moodImage} />
       </Pressable>
-      <Pressable onPress={() => props.navigation.navigate('SignUp')}>
+      <Pressable onPress={() => props.navigation.navigate('Angry')}>
         <Image source={require('./angry.png')} style={styles.moodImage} />
       </Pressable>
-      <Pressable onPress={() => props.navigation.navigate('SignIn')}>
+      <Pressable onPress={() => props.navigation.navigate('Tired')}>
         <Image source={require('./tired.png')} style={styles.moodImage} />
       </Pressable>
-      <Pressable onPress={() => props.navigation.navigate('SignIn')}>
+      <Pressable onPress={() => props.navigation.navigate('Fine')}>
         <Image source={require('./fine.png')} style={styles.moodImage} />
       </Pressable>
-      <Pressable onPress={() => props.navigation.navigate('SignIn')}>
+      <Pressable onPress={() => props.navigation.navigate('Great')}>
         <Image source={require('./great.png')} style={styles.moodImage} />
       </Pressable>
-      <Pressable onPress={() => props.navigation.navigate('SignIn')}>
+      <Pressable onPress={() => props.navigation.navigate('Love')}>
         <Image source={require('./love.png')} style={styles.moodImage} />
       </Pressable>
     </SafeAreaView>

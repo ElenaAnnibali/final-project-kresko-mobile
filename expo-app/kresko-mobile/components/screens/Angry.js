@@ -2,8 +2,9 @@ import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function DailyScreen() {
+export default function AngryScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -11,21 +12,23 @@ export default function DailyScreen() {
   }, []);
 
   return (
-    <View style={styles.animationContainer}>
+    <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          Let's try a simple breathing exercise together:
+          So you are feeling angry or upset today, don't you?
         </Text>
         <Text style={styles.h3}>
-          when you're ready touch the screen and follow the instructions.
+          Well, the good news is: this is absolutely normal.
         </Text>
+        <Text style={styles.h3}>We all get angry from time to time. </Text>
+        <Text style={styles.h3}>It just happens.</Text>
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./breathing.json')}
+        source={require('./angry.json')}
         autoPlay
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -38,18 +41,19 @@ const styles = StyleSheet.create({
   },
 
   animation: {
-    top: 100,
+    top: 120,
   },
 
   h3: {
     fontFamily: 'Jost_400Regular',
     fontSize: 24,
-    top: 80,
     textAlign: 'center',
   },
 
   textContainer: {
     flex: 1,
     marginHorizontal: 10,
+    top: 40,
+    bottom: 40,
   },
 });

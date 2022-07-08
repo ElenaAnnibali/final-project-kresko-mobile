@@ -2,8 +2,9 @@ import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function DailyScreen() {
+export default function RelaxScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -11,21 +12,15 @@ export default function DailyScreen() {
   }, []);
 
   return (
-    <View style={styles.animationContainer}>
+    <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          Let's try a simple breathing exercise together:
-        </Text>
-        <Text style={styles.h3}>
-          when you're ready touch the screen and follow the instructions.
+          Hello little human, I'm Prismo, and I will help you relax. Let's go
+          now!
         </Text>
       </View>
-      <LottieView
-        style={styles.animation}
-        source={require('./breathing.json')}
-        autoPlay
-      />
-    </View>
+      <LottieView source={require('./prismo.json')} autoPlay />
+    </SafeAreaView>
   );
 }
 
@@ -37,15 +32,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 
-  animation: {
-    top: 100,
-  },
-
   h3: {
     fontFamily: 'Jost_400Regular',
     fontSize: 24,
-    top: 80,
-    textAlign: 'center',
+    top: 40,
   },
 
   textContainer: {
