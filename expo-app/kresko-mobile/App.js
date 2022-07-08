@@ -6,11 +6,13 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AccountScreen from './components/screens/AccountScreen';
 import DailyScreen from './components/screens/DailyScreen';
 import HomeScreen from './components/screens/HomeScreen';
+import LoginScreen from './components/screens/Login';
 import MoodScreen from './components/screens/MoodScreen';
-import SignInScreen from './components/screens/SignIn';
-import SignUpScreen from './components/screens/SignUp';
+import RegisterScreen from './components/screens/Register';
 
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const Tab = createBottomTabNavigator();
+// eslint-disable-next-line @typescript-eslint/naming-convention
 const Stack = createNativeStackNavigator();
 
 function MainNavigator() {
@@ -45,7 +47,7 @@ function MainNavigator() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialIcons
               name="home"
               color={color}
@@ -59,8 +61,8 @@ function MainNavigator() {
         name="Account"
         component={AccountScreen}
         options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => (
+          tabBarLabel: 'Account',
+          tabBarIcon: ({ color }) => (
             <MaterialIcons
               name="account-circle"
               color={color}
@@ -75,7 +77,7 @@ function MainNavigator() {
         component={DailyScreen}
         options={{
           tabBarLabel: 'Daily',
-          tabBarIcon: ({ color, size }) => (
+          tabBarIcon: ({ color }) => (
             <MaterialIcons
               name="opacity"
               color={color}
@@ -90,7 +92,6 @@ function MainNavigator() {
 }
 
 export default function App() {
-  console.log('test');
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -98,8 +99,8 @@ export default function App() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="SignIn" component={SignInScreen} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Main" component={MainNavigator} />
         <Stack.Screen name="Mood" component={MoodScreen} />
       </Stack.Navigator>

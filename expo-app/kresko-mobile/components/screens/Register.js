@@ -1,4 +1,5 @@
 import { Fascinate_400Regular, Jost_400Regular } from '@expo-google-fonts/dev';
+import Constants from 'expo-constants';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 /* eslint-disable @typescript-eslint/no-use-before-define */
@@ -15,10 +16,18 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function SignInScreen(props) {
+const { manifest } = Constants;
+
+const apiBaseUrl =
+  typeof manifest.packagerOpts === `object` && manifest.packagerOpts.dev
+    ? `http://${manifest.debuggerHost.split(`:`).shift()}:3000/api/login`
+    : 'https://api.example.com';
+
+export default function RegisterScreen(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [appIsReady, setAppIsReady] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   useEffect(() => {
     async function prepare() {
@@ -59,11 +68,11 @@ export default function SignInScreen(props) {
     return null;
   }
 
-  async function signInHandler() {
-    const registerResponse = await fetch('/api/register', {
+  async function registerHandler() {
+    const registerResponse = await fetch(apiBaseUrl, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username: username,
@@ -74,6 +83,15 @@ export default function SignInScreen(props) {
     const registerResponseBody = await registerResponse.json();
 
     console.log(registerResponseBody);
+
+    // if user exists: error
+    if ('errors' in registerResponseBody) {
+      setErrors(registerResponseBody.errors);
+      return;
+    } else {
+      props.navigation.push('Main');
+      return;
+    }
   }
 
   return (
@@ -118,12 +136,22 @@ export default function SignInScreen(props) {
           secureTextEntry={true}
           // onSubmitEditing={confirmPasswordsMatch}
         /> */}
-        <Button title="Create account" onPress={signInHandler} />
+        {errors.map((error) => (
+          <Text key={`error-${error.message}`}>{error.message}</Text>
+        ))}
+        <Button
+          title="Create account"
+          onPress={() => {
+            registerHandler().catch((e) => {
+              console.log(e);
+            });
+          }}
+        />
       </ScrollView>
       <View style={signInStyles.thirdContainer}>
         <Text style={signInStyles.h4}>Already have an account?</Text>
-        <Pressable onPress={() => props.navigation.navigate('SignUp')}>
-          <Text style={signInStyles.signUpAnchor}>Sign up</Text>
+        <Pressable onPress={() => props.navigation.navigate('Login')}>
+          <Text style={signInStyles.signUpAnchor}>Login</Text>
         </Pressable>
       </View>
     </SafeAreaView>
