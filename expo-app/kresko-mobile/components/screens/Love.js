@@ -15,11 +15,18 @@ export default function LoveScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          I know, I know. Nobody likes to feel sad, but it's important to
-          understand where this feeling is coming from.
+          There is nothing better than being in love and being loved back.
         </Text>
-        <Text style={styles.h3}>For now, seek comfort if you feel like.</Text>
-        <Text style={styles.h3}>And remember: it's ok to cry.</Text>
+        <Text style={styles.h3}>
+          Learning how to love yourself is a very powerfull tool.
+        </Text>
+        <Text>
+          This means being kind with ourself and having a positive attitude
+          towards our own diffiulties.
+        </Text>
+        <Text style={styles.h3}>
+          For now, give yourself a hug, you deserve it!
+        </Text>
       </View>
       <LottieView
         style={styles.animation}

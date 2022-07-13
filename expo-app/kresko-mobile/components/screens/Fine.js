@@ -15,11 +15,12 @@ export default function FineScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          I know, I know. Nobody likes to feel sad, but it's important to
-          understand where this feeling is coming from.
+          Not good, not bad. Just fine. What's wrong with feeling fine?
         </Text>
-        <Text style={styles.h3}>For now, seek comfort if you feel like.</Text>
-        <Text style={styles.h3}>And remember: it's ok to cry.</Text>
+        <Text style={styles.h3}>I'll tell you:</Text>
+        <Text style={styles.h3}>
+          Nothing, there is really nothing wrong with it.
+        </Text>
       </View>
       <LottieView
         style={styles.animation}

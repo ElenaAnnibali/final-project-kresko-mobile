@@ -38,3 +38,59 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 Postgres error
 
 pg_ctl -D /usr/local/var/postgres stop
+
+## ABOUT THIS APP
+
+Kresko is a mobile application developed with React Native for the Frontend and Next.js for the backend.
+The app is designed for children/teens coming from a marginalized environment on the age range 10-14, and the aim is to introduce them to mental health topics and therefore grow awareness of their own well being.
+The app is meant to be used within the school class, tough is it possible to use it as a single individual.
+The main functionality is achieved through a simple action, where the kids are asked to answer the question: "How are you feeling?" by choosing from a range of six different emotions expressed by an image. The data will be stored in the database and retrieved to the teacher, whicch can then show the mood of the class and find space and solutions to improved the general well being.
+Users are also provided with a journal in which they can write about their feelings or express them through images.
+
+The app is tought to be as accessible as possible, and further features are under development.
+
+## STARTING A FULLSTACK PROJECT WITH REACT NATIVE (WITH EXPO) AND NEXT.JS
+
+The Frontend and the Backend frameworks needs to be installed into two separated folder as follows:
+
+1. create a new project
+
+cd projects
+git clone <project url>
+cd <project name>
+code .
+
+1.1 IN CASE YOU NEED TO INSTALL ESlint ON THE ROOT:
+
+- yarn create next-react-app .
+- DELETE FOLDERS (pages, style...)
+- install ESlint --> (see UpLeveled repo about the topic)
+
+2. create a next-api folder and inside the folder create a next.js app
+   cd <folder name>
+   yarn create next-react-app .
+   yarn dev
+
+3. crate a expo-app folder and inside the folder create a expo app
+   BEFORE PROCEDING: {
+   3.1 INSTALL EXPO IF YOU ALREADY HAVEN'T
+   npm install --global expo-cli
+   3.2 INSTALL EXPO GO ON YOUR MOBILE DEVICE
+   }
+
+expo init <project name> => choose a template
+
+4. run the app
+   cd <project name>
+   yarn start / expo start
+
+5.
+
+5.1 WORKING WITH EXPO GO
+scan your your mobile device the qrcode
+
+5.2 WORKING WITH AN ANDROID EMULATOR (ANDROID STUDIO)
+
+### INSTRUCTIONS FOR THE BACKEND -USING POSTGRES, POSTGRESQL AND REST API
+
+NOTE: One of the main changes for the next months will be to substitute RSET API in favor of GRAPHQL + APOLLO

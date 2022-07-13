@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { createUser } from '../../util/database';
 
 type RegisterResponseBody =
   | { errors: { message: string }[] }
@@ -25,6 +26,7 @@ export default async function handler(
     }
 
     // get the username
+    const username = req.body.username;
     // hash the password
     const passwordHash = await bcrypt.hash(req.body.password, 12);
 
@@ -32,5 +34,8 @@ export default async function handler(
     console.log('hash', passwordHash);
 
     // create new user
+    const newUser = await createUser(req.body.username, passwordHash);
+
+    console.log('new user:', newUser);
   }
 }

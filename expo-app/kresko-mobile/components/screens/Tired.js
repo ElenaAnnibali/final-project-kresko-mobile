@@ -15,11 +15,15 @@ export default function TiredScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          I know, I know. Nobody likes to feel sad, but it's important to
-          understand where this feeling is coming from.
+          What is this weird feeling that makes you so grumpy?
         </Text>
-        <Text style={styles.h3}>For now, seek comfort if you feel like.</Text>
-        <Text style={styles.h3}>And remember: it's ok to cry.</Text>
+        <Text style={styles.h3}>
+          You're most probably tired, or a bit overwhelmed.
+        </Text>
+        <Text style={styles.h3}>
+          Resting might sounds boring, but it will help you feeling better.
+        </Text>
+        <Text style={styles.h3}>So, what about a power nap?</Text>
       </View>
       <LottieView
         style={styles.animation}

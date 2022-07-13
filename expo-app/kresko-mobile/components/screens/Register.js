@@ -20,7 +20,7 @@ const { manifest } = Constants;
 
 const apiBaseUrl =
   typeof manifest.packagerOpts === `object` && manifest.packagerOpts.dev
-    ? `http://${manifest.debuggerHost.split(`:`).shift()}:3000/api/login`
+    ? `http://${manifest.debuggerHost.split(`:`).shift()}:3000/api/register`
     : 'https://api.example.com';
 
 export default function RegisterScreen(props) {
@@ -113,6 +113,7 @@ export default function RegisterScreen(props) {
         <TextInput
           style={signInStyles.input}
           placeholder="choose a username"
+          value={username}
           onChangeText={setUsername}
         />
         {/* <Text style={styles.h3}>Class</Text>
@@ -125,6 +126,7 @@ export default function RegisterScreen(props) {
         <TextInput
           style={signInStyles.inputLast}
           placeholder="Choose a password"
+          value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
         />
@@ -142,8 +144,8 @@ export default function RegisterScreen(props) {
         <Button
           title="Create account"
           onPress={() => {
-            registerHandler().catch((e) => {
-              console.log(e);
+            registerHandler().catch((error) => {
+              console.log(error);
             });
           }}
         />

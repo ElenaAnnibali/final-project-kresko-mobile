@@ -15,11 +15,13 @@ export default function GreatScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          I know, I know. Nobody likes to feel sad, but it's important to
-          understand where this feeling is coming from.
+          You're feeling great and everyone can see that!
         </Text>
-        <Text style={styles.h3}>For now, seek comfort if you feel like.</Text>
-        <Text style={styles.h3}>And remember: it's ok to cry.</Text>
+        <Text style={styles.h3}>Cool! Let's celebrate this good feeling!</Text>
+        <Text style={styles.h3}>
+          Make a small dance, sing a song or give the world your best smile:
+        </Text>
+        <Text style={styles.h3}>you rock!</Text>
       </View>
       <LottieView
         style={styles.animation}
