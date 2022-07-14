@@ -9,7 +9,8 @@ Users are also provided with a journal in which they can write about their feeli
 The app is tought to be as accessible as possible, and further features are under development.
 
 ## DATABASE SCHEMA
-![alt text](screenshots/databaseSchema.png "This database schema was created with DrawSQL")
+<img width="1149" alt="databaseSchema" src="https://user-images.githubusercontent.com/77542450/178927762-8c157d0e-1eca-4227-ba75-70b2eb5a1ae0.png">
+
 
 
 
