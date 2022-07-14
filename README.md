@@ -1,3 +1,6 @@
+## KRESKO MOBILE APP
+Welcome to my final project for the UpLeveled Bootcamp!
+
 ## ABOUT THIS APP
 
 Kresko is a mobile application developed with React Native for the Frontend and Next.js for the backend.
