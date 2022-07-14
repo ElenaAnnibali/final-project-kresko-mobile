@@ -9,6 +9,7 @@ Users are also provided with a journal in which they can write about their feeli
 The app is tought to be as accessible as possible, and further features are under development.
 
 ## DATABASE SCHEMA
+![alt text](screenshots/databaseSchema.png "This database schema was created with DrawSQL")
 
 
 
