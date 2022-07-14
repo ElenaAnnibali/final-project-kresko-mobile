@@ -42,9 +42,12 @@ pg_ctl -D /usr/local/var/postgres stop
 ## ABOUT THIS APP
 
 Kresko is a mobile application developed with React Native for the Frontend and Next.js for the backend.
+
 The app is designed for children/teens coming from a marginalized environment on the age range 10-14, and the aim is to introduce them to mental health topics and therefore grow awareness of their own well being.
-The app is meant to be used within the school class, tough is it possible to use it as a single individual.
-The main functionality is achieved through a simple action, where the kids are asked to answer the question: "How are you feeling?" by choosing from a range of six different emotions expressed by an image. The data will be stored in the database and retrieved to the teacher, whicch can then show the mood of the class and find space and solutions to improved the general well being.
+
+The app is meant to be used within the school class, tough is it possible to use it as a single individual. --> under construction, but coming soon!
+
+The main functionality is achieved through a simple action, where the kids are asked to answer the question: "How are you feeling?" by choosing from a range of six different emotions expressed by an image. --> The data will be stored in the database and retrieved to the students and the teacher, which can then show the mood of the class and find space and solutions to improved the general well being.
 Users are also provided with a journal in which they can write about their feelings or express them through images.
 
 The app is tought to be as accessible as possible, and further features are under development.
@@ -84,13 +87,14 @@ expo init <project name> => choose a template
    cd <project name>
    yarn start / expo start
 
-5.
+5. 5.1 WORKING WITH EXPO GO
+   scan your your mobile device the qrcode
 
-5.1 WORKING WITH EXPO GO
-scan your your mobile device the qrcode
-
-5.2 WORKING WITH AN ANDROID EMULATOR (ANDROID STUDIO)
+   5.2 WORKING WITH AN ANDROID EMULATOR (ANDROID STUDIO)
 
 ### INSTRUCTIONS FOR THE BACKEND -USING POSTGRES, POSTGRESQL AND REST API
 
 NOTE: One of the main changes for the next months will be to substitute RSET API in favor of GRAPHQL + APOLLO
+
+
+## DATABASE SCHEMA
