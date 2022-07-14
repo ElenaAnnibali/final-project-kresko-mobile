@@ -24,7 +24,7 @@ export default function HomeScreen(props) {
         {/* second card */}
         <View style={[styles.card, styles.elevation]}>
           <Image
-            source={require('./journal.png')}
+            source={require('../../assets/images/journal.png')}
             style={styles.journalImage}
           />
           <TouchableOpacity style={styles.button}>
@@ -35,7 +35,7 @@ export default function HomeScreen(props) {
         <View style={[styles.card, styles.elevation]}>
           <Pressable onPress={() => props.navigation.navigate('Relax')}>
             <Image
-              source={require('./meditation.png')}
+              source={require('../../assets/images/meditation.png')}
               style={styles.journalImage}
             />
             <TouchableOpacity style={styles.button}>

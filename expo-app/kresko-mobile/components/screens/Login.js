@@ -5,13 +5,14 @@ import { useState } from 'react';
 import {
   Button,
   Image,
-  Pressable,
   ScrollView,
   StyleSheet,
   Text,
   TextInput,
   View,
 } from 'react-native';
+
+// import { userContext } from '../../util/Context';
 
 const { manifest } = Constants;
 
@@ -25,6 +26,8 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const navigation = useNavigation();
   const [errors, setErrors] = useState([]);
+
+  // const { setUser } = useContext(userContext);
 
   async function loginHandler() {
     const loginResponse = await fetch(apiBaseUrl, {
@@ -47,6 +50,9 @@ export default function LoginScreen() {
       setErrors(loginResponseBody.errors);
       return;
     } else {
+      // setUser({
+      //   id: loginResponseBody.user.id,
+      // });
       navigation.push('Main');
       return;
     }
@@ -55,7 +61,10 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome back on Kresko</Text>
-      <Image source={require('./cloud.png')} style={styles.cloudImage} />
+      <Image
+        source={require('../../assets/images/cloud.png')}
+        style={styles.cloudImage}
+      />
       <ScrollView style={styles.scrollView}>
         <Text style={styles.h3}>Username</Text>
         <TextInput
@@ -70,12 +79,7 @@ export default function LoginScreen() {
           onChangeText={setPassword}
           secureTextEntry={true}
         />
-        {errors.map((error) => (
-          <Text style={styles.text} key={`error-${error.message}`}>
-            {error.message}
-          </Text>
-        ))}
-        <Pressable
+        {/* <Pressable
           onPress={() => {
             loginHandler().catch((e) => {
               console.log(e);
@@ -83,7 +87,21 @@ export default function LoginScreen() {
           }}
         >
           <Button title="Sign up" onPress={() => navigation.navigate('Main')} />
-        </Pressable>
+        </Pressable> */}
+        <Button
+          title="Login"
+          onPress={() => {
+            loginHandler().catch((error) => {
+              console.log(error);
+            });
+          }}
+        />
+        {errors.map((error) => (
+          <Text style={styles.error} key={`error-${error.message}`}>
+            {error.message}
+          </Text>
+        ))}
+        <View style={styles.last} />
       </ScrollView>
     </View>
   );
@@ -106,10 +124,11 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    top: 20,
+    top: 40,
     fontSize: 40,
     fontFamily: 'Fascinate_400Regular',
     textAlign: 'center',
+    marginHorizontal: 5,
   },
 
   h3: {
@@ -136,5 +155,22 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     top: 10,
     marginBottom: 40,
+  },
+
+  error: {
+    backgroundColor: '#2F0169',
+    color: '#FFFAE9',
+    fontFamily: 'Jost_400Regular',
+    fontSize: 20,
+    top: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    textAlign: 'center',
+    borderRadius: 10,
+    bottom: 10,
+  },
+
+  last: {
+    paddingVertical: 50,
   },
 });

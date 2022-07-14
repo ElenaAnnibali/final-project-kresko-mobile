@@ -22,7 +22,7 @@ export default function DailyScreen() {
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./breathing.json')}
+        source={require('../../assets/animations/others/breathing.json')}
         autoPlay
       />
     </View>

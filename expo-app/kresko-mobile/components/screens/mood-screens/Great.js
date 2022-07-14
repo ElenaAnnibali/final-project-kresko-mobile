@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function FineScreen() {
+export default function GreatScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -15,16 +15,17 @@ export default function FineScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          Not good, not bad. Just fine. What's wrong with feeling fine?
+          You're feeling great and everyone can see that!
         </Text>
-        <Text style={styles.h3}>I'll tell you:</Text>
+        <Text style={styles.h3}>Cool! Let's celebrate this good feeling!</Text>
         <Text style={styles.h3}>
-          Nothing, there is really nothing wrong with it.
+          Make a small dance, sing a song or give the world your best smile:
         </Text>
+        <Text style={styles.h3}>you rock!</Text>
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./fine.json')}
+        source={require('../../../assets/animations/mood-animations/great.json')}
         autoPlay
       />
     </SafeAreaView>

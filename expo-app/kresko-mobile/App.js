@@ -4,18 +4,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AccountScreen from './components/screens/AccountScreen';
-import AngryScreen from './components/screens/Angry';
 import DailyScreen from './components/screens/DailyScreen';
-import FineScreen from './components/screens/Fine';
-import GreatScreen from './components/screens/Great';
 import HomeScreen from './components/screens/HomeScreen';
 import LoginScreen from './components/screens/Login';
-import LoveScreen from './components/screens/Love';
-import MoodScreen from './components/screens/MoodScreen';
+import AngryScreen from './components/screens/mood-screens/Angry';
+import FineScreen from './components/screens/mood-screens/Fine';
+import GreatScreen from './components/screens/mood-screens/Great';
+import LoveScreen from './components/screens/mood-screens/Love';
+import MoodScreen from './components/screens/mood-screens/MoodScreen';
+import SadScreen from './components/screens/mood-screens/Sad';
+import TiredScreen from './components/screens/mood-screens/Tired';
 import RegisterScreen from './components/screens/Register';
 import RelaxScreen from './components/screens/RelaxScreen';
-import SadScreen from './components/screens/Sad';
-import TiredScreen from './components/screens/Tired';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Tab = createBottomTabNavigator();

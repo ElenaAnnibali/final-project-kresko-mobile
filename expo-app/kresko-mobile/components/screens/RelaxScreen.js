@@ -19,7 +19,10 @@ export default function RelaxScreen() {
           now!
         </Text>
       </View>
-      <LottieView source={require('./prismo.json')} autoPlay />
+      <LottieView
+        source={require('../../assets/animations/others/prismo.json')}
+        autoPlay
+      />
     </SafeAreaView>
   );
 }

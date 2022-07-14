@@ -25,7 +25,7 @@ export default function AngryScreen() {
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./angry.json')}
+        source={require('../../../assets/animations/mood-animations/angry.json')}
         autoPlay
       />
     </SafeAreaView>

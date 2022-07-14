@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function GreatScreen() {
+export default function LoveScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -15,17 +15,22 @@ export default function GreatScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          You're feeling great and everyone can see that!
+          There is nothing better than being in love and being loved back.
         </Text>
-        <Text style={styles.h3}>Cool! Let's celebrate this good feeling!</Text>
         <Text style={styles.h3}>
-          Make a small dance, sing a song or give the world your best smile:
+          Learning how to love yourself is a very powerfull tool.
         </Text>
-        <Text style={styles.h3}>you rock!</Text>
+        <Text>
+          This means being kind with ourself and having a positive attitude
+          towards our own diffiulties.
+        </Text>
+        <Text style={styles.h3}>
+          For now, give yourself a hug, you deserve it!
+        </Text>
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./great.json')}
+        source={require('../../../assets/animations/mood-animations/love.json')}
         autoPlay
       />
     </SafeAreaView>

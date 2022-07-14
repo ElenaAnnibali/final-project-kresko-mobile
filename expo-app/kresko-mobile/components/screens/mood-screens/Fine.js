@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function TiredScreen() {
+export default function FineScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -15,19 +15,16 @@ export default function TiredScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          What is this weird feeling that makes you so grumpy?
+          Not good, not bad. Just fine. What's wrong with feeling fine?
         </Text>
+        <Text style={styles.h3}>I'll tell you:</Text>
         <Text style={styles.h3}>
-          You're most probably tired, or a bit overwhelmed.
+          Nothing, there is really nothing wrong with it.
         </Text>
-        <Text style={styles.h3}>
-          Resting might sounds boring, but it will help you feeling better.
-        </Text>
-        <Text style={styles.h3}>So, what about a power nap?</Text>
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./tired.json')}
+        source={require('../../../assets/animations/mood-animations/fine.json')}
         autoPlay
       />
     </SafeAreaView>

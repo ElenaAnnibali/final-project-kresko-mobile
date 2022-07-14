@@ -21,7 +21,7 @@ export default function AccountScreen(props) {
         <View style={[styles.firstCard, styles.elevation]}>
           <Pressable onPress={() => props.navigation.navigate('Relax')}>
             <Image
-              source={require('./aboutyou.png')}
+              source={require('../../assets/images/aboutyou.png')}
               style={styles.journalImage}
             />
           </Pressable>
@@ -31,7 +31,7 @@ export default function AccountScreen(props) {
         <View style={[styles.secondCard, styles.elevation]}>
           <Pressable onPress={() => props.navigation.navigate('Relax')}>
             <Image
-              source={require('./insights.png')}
+              source={require('../../assets/images/insights.png')}
               style={styles.journalImage}
             />
           </Pressable>
@@ -41,7 +41,7 @@ export default function AccountScreen(props) {
         <View style={[styles.thirdCard, styles.elevation]}>
           <Pressable onPress={() => props.navigation.navigate('Relax')}>
             <Image
-              source={require('./records.png')}
+              source={require('../../assets/images/records.png')}
               style={styles.journalImage}
             />
           </Pressable>

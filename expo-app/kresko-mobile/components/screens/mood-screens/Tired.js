@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function LoveScreen() {
+export default function TiredScreen() {
   const animation = useRef(null);
   useEffect(() => {
     // You can control the ref programmatically, rather than using autoPlay
@@ -15,22 +15,19 @@ export default function LoveScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          There is nothing better than being in love and being loved back.
+          What is this weird feeling that makes you so grumpy?
         </Text>
         <Text style={styles.h3}>
-          Learning how to love yourself is a very powerfull tool.
-        </Text>
-        <Text>
-          This means being kind with ourself and having a positive attitude
-          towards our own diffiulties.
+          You're most probably tired, or a bit overwhelmed.
         </Text>
         <Text style={styles.h3}>
-          For now, give yourself a hug, you deserve it!
+          Resting might sounds boring, but it will help you feeling better.
         </Text>
+        <Text style={styles.h3}>So, what about a power nap?</Text>
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./love.json')}
+        source={require('../../../assets/animations/mood-animations/tired.json')}
         autoPlay
       />
     </SafeAreaView>

@@ -23,7 +23,7 @@ export default function SadScreen() {
       </View>
       <LottieView
         style={styles.animation}
-        source={require('./sad.json')}
+        source={require('../../../assets/animations/mood-animations/sad.json')}
         autoPlay
       />
     </SafeAreaView>

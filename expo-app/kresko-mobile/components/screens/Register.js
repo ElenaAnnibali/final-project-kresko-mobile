@@ -97,7 +97,10 @@ export default function RegisterScreen(props) {
   return (
     <SafeAreaView style={signInStyles.container} onLayout={onLayoutRootView}>
       <Text style={signInStyles.title}>Welcome on Kresko</Text>
-      <Image source={require('./image.png')} style={signInStyles.image} />
+      <Image
+        source={require('../../assets/images/image.png')}
+        style={signInStyles.image}
+      />
 
       <ScrollView
         style={signInStyles.scrollView}
@@ -138,9 +141,7 @@ export default function RegisterScreen(props) {
           secureTextEntry={true}
           // onSubmitEditing={confirmPasswordsMatch}
         /> */}
-        {errors.map((error) => (
-          <Text key={`error-${error.message}`}>{error.message}</Text>
-        ))}
+
         <Button
           title="Create account"
           onPress={() => {
@@ -149,6 +150,11 @@ export default function RegisterScreen(props) {
             });
           }}
         />
+        {errors.map((error) => (
+          <Text style={signInStyles.error} key={`error-${error.message}`}>
+            {error.message}
+          </Text>
+        ))}
       </ScrollView>
       <View style={signInStyles.thirdContainer}>
         <Text style={signInStyles.h4}>Already have an account?</Text>
@@ -233,5 +239,16 @@ const signInStyles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 18,
+  },
+
+  error: {
+    backgroundColor: '#2F0169',
+    color: '#FFFAE9',
+    fontFamily: 'Jost_400Regular',
+    fontSize: 20,
+    top: 20,
+    paddingHorizontal: 20,
+    textAlign: 'center',
+    borderRadius: 10,
   },
 });
