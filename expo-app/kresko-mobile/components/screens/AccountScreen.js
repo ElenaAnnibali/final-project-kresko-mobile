@@ -19,7 +19,7 @@ export default function AccountScreen(props) {
         {/* first card */}
         <Text style={styles.h2}>About you</Text>
         <View style={[styles.firstCard, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Relax')}>
+          <Pressable onPress={() => props.navigation.navigate('Profile')}>
             <Image
               source={require('../../assets/images/aboutyou.png')}
               style={styles.journalImage}

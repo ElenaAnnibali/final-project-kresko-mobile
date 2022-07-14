@@ -14,6 +14,7 @@ import LoveScreen from './components/screens/mood-screens/Love';
 import MoodScreen from './components/screens/mood-screens/MoodScreen';
 import SadScreen from './components/screens/mood-screens/Sad';
 import TiredScreen from './components/screens/mood-screens/Tired';
+import ProfileScreen from './components/screens/ProfileScreen';
 import RegisterScreen from './components/screens/Register';
 import RelaxScreen from './components/screens/RelaxScreen';
 
@@ -117,6 +118,7 @@ export default function App() {
         <Stack.Screen name="Fine" component={FineScreen} />
         <Stack.Screen name="Great" component={GreatScreen} />
         <Stack.Screen name="Love" component={LoveScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
