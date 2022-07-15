@@ -2,11 +2,11 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function ProfileScreen(props) {
+export default function ProfileScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View stlyes={styles.subcontainer}>
-        <Text style={styles.h3}>Hello {props.username}</Text>
+        <Text style={styles.h3}>Hello</Text>
       </View>
     </SafeAreaView>
   );

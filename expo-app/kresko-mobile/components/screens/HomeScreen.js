@@ -23,13 +23,15 @@ export default function HomeScreen(props) {
         </View>
         {/* second card */}
         <View style={[styles.card, styles.elevation]}>
-          <Image
-            source={require('../../assets/images/journal.png')}
-            style={styles.journalImage}
-          />
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Your personal journal</Text>
-          </TouchableOpacity>
+          <Pressable onPress={() => props.navigation.navigate('Journal')}>
+            <Image
+              source={require('../../assets/images/journal.png')}
+              style={styles.journalImage}
+            />
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Your personal journal</Text>
+            </TouchableOpacity>
+          </Pressable>
         </View>
         {/* third card */}
         <View style={[styles.card, styles.elevation]}>

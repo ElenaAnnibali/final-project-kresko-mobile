@@ -158,3 +158,22 @@ export async function getUserByValidSessionToken(token: string) {
     sessions.expiry_timestamp > now();`;
   return user && camelcaseKeys(user);
 }
+
+// --- mood entries
+type Mood = {
+  mood: string;
+};
+
+export async function createMoodEntry(moodEntry: string) {
+  const [mood] = await sql<[Mood]>`
+  INSERT INTO mood_entries
+    (mood)
+  VALUES
+    (${moodEntry})
+  RETURNING
+    mood_entry;
+
+  `;
+
+  return camelcaseKeys(mood);
+}

@@ -23,11 +23,11 @@ export default function AngryScreen() {
         <Text style={styles.h3}>We all get angry from time to time. </Text>
         <Text style={styles.h3}>It just happens.</Text>
       </View>
-      <LottieView
+      {/* <LottieView
         style={styles.animation}
         source={require('../../../assets/animations/mood-animations/angry.json')}
         autoPlay
-      />
+      /> */}
     </SafeAreaView>
   );
 }

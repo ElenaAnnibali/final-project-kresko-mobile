@@ -2,10 +2,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LogBox } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AccountScreen from './components/screens/AccountScreen';
 import DailyScreen from './components/screens/DailyScreen';
 import HomeScreen from './components/screens/HomeScreen';
+import JournalScreen from './components/screens/JournalScreen';
 import LoginScreen from './components/screens/Login';
 import AngryScreen from './components/screens/mood-screens/Angry';
 import FineScreen from './components/screens/mood-screens/Fine';
@@ -16,7 +18,12 @@ import SadScreen from './components/screens/mood-screens/Sad';
 import TiredScreen from './components/screens/mood-screens/Tired';
 import ProfileScreen from './components/screens/ProfileScreen';
 import RegisterScreen from './components/screens/Register';
-import RelaxScreen from './components/screens/RelaxScreen';
+import FourthRelaxScreen from './components/screens/relax-screens/FourthRelaxScreen';
+import RelaxScreen from './components/screens/relax-screens/RelaxScreen';
+import SecondRelaxScreen from './components/screens/relax-screens/SecondRelaxScreen';
+import ThirdRelaxScreen from './components/screens/relax-screens/ThirdRelaxScreen';
+
+LogBox.ignoreLogs(["exported from 'deprecated-react-native-prop-types'."]);
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 const Tab = createBottomTabNavigator();
@@ -119,6 +126,10 @@ export default function App() {
         <Stack.Screen name="Great" component={GreatScreen} />
         <Stack.Screen name="Love" component={LoveScreen} />
         <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Journal" component={JournalScreen} />
+        <Stack.Screen name="SecondRelax" component={SecondRelaxScreen} />
+        <Stack.Screen name="ThirdRelax" component={ThirdRelaxScreen} />
+        <Stack.Screen name="FourthRelax" component={FourthRelaxScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

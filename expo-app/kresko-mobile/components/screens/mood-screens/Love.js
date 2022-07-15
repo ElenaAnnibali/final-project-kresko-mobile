@@ -15,14 +15,11 @@ export default function LoveScreen() {
     <SafeAreaView style={styles.animationContainer}>
       <View style={styles.textContainer}>
         <Text style={styles.h3}>
-          There is nothing better than being in love and being loved back.
-        </Text>
-        <Text style={styles.h3}>
           Learning how to love yourself is a very powerfull tool.
         </Text>
-        <Text>
-          This means being kind with ourself and having a positive attitude
-          towards our own diffiulties.
+        <Text style={styles.h3}>
+          This means being kind with yourself and having a positive attitude
+          towards diffiulties.
         </Text>
         <Text style={styles.h3}>
           For now, give yourself a hug, you deserve it!

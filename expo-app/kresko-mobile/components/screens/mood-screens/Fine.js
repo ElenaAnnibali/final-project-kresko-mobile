@@ -22,11 +22,11 @@ export default function FineScreen() {
           Nothing, there is really nothing wrong with it.
         </Text>
       </View>
-      <LottieView
+      {/* <LottieView
         style={styles.animation}
         source={require('../../../assets/animations/mood-animations/fine.json')}
         autoPlay
-      />
+      /> */}
     </SafeAreaView>
   );
 }

@@ -23,11 +23,11 @@ export default function GreatScreen() {
         </Text>
         <Text style={styles.h3}>you rock!</Text>
       </View>
-      <LottieView
+      {/* <LottieView
         style={styles.animation}
         source={require('../../../assets/animations/mood-animations/great.json')}
         autoPlay
-      />
+      /> */}
     </SafeAreaView>
   );
 }
