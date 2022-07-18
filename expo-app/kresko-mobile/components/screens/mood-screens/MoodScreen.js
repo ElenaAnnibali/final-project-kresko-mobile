@@ -67,14 +67,15 @@ export default function MoodScreen(props) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.h2}>Hello, how are how today?</Text>
+      <Text style={styles.h2}>Hello, how are you today?</Text>
       <Pressable onPress={() => setSadMood('sad')}>
         <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
+          // onPress={() => {
+          //   moodHandler().catch((error) => {
+          //     console.log(error);
+          //   });
+          // }}
+          onPress={() => props.navigation.navigate('Sad')}
         >
           <Image
             source={require('../../../assets/images/mood/sad.png')}
@@ -84,11 +85,12 @@ export default function MoodScreen(props) {
       </Pressable>
       <Pressable onPress={() => setAngryMood('angry')}>
         <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
+          // onPress={() => {
+          //   moodHandler().catch((error) => {
+          //     console.log(error);
+          //   });
+          // }}
+          onPress={() => props.navigation.navigate('Angry')}
         >
           <Image
             source={require('../../../assets/images/mood/angry.png')}
@@ -98,11 +100,12 @@ export default function MoodScreen(props) {
       </Pressable>
       <Pressable onPress={() => setTiredMood('tired')}>
         <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
+          // onPress={() => {
+          //   moodHandler().catch((error) => {
+          //     console.log(error);
+          //   });
+          // }}
+          onPress={() => props.navigation.navigate('Tired')}
         >
           <Image
             source={require('../../../assets/images/mood/tired.png')}
@@ -110,27 +113,27 @@ export default function MoodScreen(props) {
           />
         </Pressable>
       </Pressable>
-      <Pressable onPress={() => setFineMood('fine')}>
-        <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
-        >
-          <Image
-            source={require('../../../assets/images/mood/fine.png')}
-            style={styles.moodImage}
-          />
-        </Pressable>
+      <Pressable
+        // onPress={() => {
+        //   moodHandler().catch((error) => {
+        //     console.log(error);
+        //   });
+        // }}
+        onPress={() => props.navigation.navigate('Fine')}
+      >
+        <Image
+          source={require('../../../assets/images/mood/fine.png')}
+          style={styles.moodImage}
+        />
       </Pressable>
       <Pressable onPress={() => setGreatMood('great')}>
         <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
+          // onPress={() => {
+          //   moodHandler().catch((error) => {
+          //     console.log(error);
+          //   });
+          // }}
+          onPress={() => props.navigation.navigate('Great')}
         >
           <Image
             source={require('../../../assets/images/mood/great.png')}
@@ -140,11 +143,12 @@ export default function MoodScreen(props) {
       </Pressable>
       <Pressable onPress={() => setLoveMood('love')}>
         <Pressable
-          onPress={() => {
-            moodHandler().catch((error) => {
-              console.log(error);
-            });
-          }}
+          // onPress={() => {
+          //   moodHandler().catch((error) => {
+          //     console.log(error);
+          //   });
+          // }}
+          onPress={() => props.navigation.navigate('Love')}
         >
           <Image
             source={require('../../../assets/images/mood/love.png')}

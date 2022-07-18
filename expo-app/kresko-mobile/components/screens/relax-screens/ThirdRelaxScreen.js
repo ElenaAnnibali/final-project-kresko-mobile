@@ -37,7 +37,7 @@ export default function SecondRelaxScreen(props) {
           </Text>
           <Text style={styles.content}>Stay there as long as you want to.</Text>
           <Text style={styles.content}>
-            Then you're done gently open your eyes.
+            Once you're done, gently open your eyes.
           </Text>
         </Animated.View>
       </TouchableOpacity>

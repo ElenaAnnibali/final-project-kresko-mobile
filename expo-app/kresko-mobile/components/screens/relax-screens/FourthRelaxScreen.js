@@ -1,10 +1,9 @@
 import LottieView from 'lottie-react-native';
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   Animated,
   Easing,
-  Pressable,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -12,12 +11,13 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function SecondRelaxScreen(props) {
-  // const animation = useRef(null);
+  const [entries, setEntries] = useState([[]]);
+
+  function onNewEntry(newEntry) {
+    setEntries([...entries, newEntry]);
+  }
+
   const animationProgress = useRef(new Animated.Value(0));
-  // useEffect(() => {
-  //   // You can control the ref programmatically, rather than using autoPlay
-  //   animation.current?.play();
-  // }, []);
 
   useEffect(() => {
     Animated.timing(animationProgress.current, {
@@ -35,18 +35,18 @@ export default function SecondRelaxScreen(props) {
       <Text style={styles.content}>
         Let's write your thoughts down or picture them on your journal!
       </Text>
-      <Text style={styles.lastContent}>Let's go!</Text>
+      <Text style={styles.content}>Let's go!</Text>
       <LottieView
         source={require('../../../assets/animations/others/prismo.json')}
         progress={animationProgress.current}
         style={styles.animation}
       />
-      <Pressable
-        style={styles.lastPressable}
-        onPress={() => props.navigation.navigate('Journal')}
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => props.navigation.push('NewJournalEntry', { onNewEntry })}
       >
-        <Text style={styles.h3}>Go to my personal journal</Text>
-      </Pressable>
+        <Text style={styles.buttonText}>Go to my personal journal</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -56,30 +56,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#EDDBFB',
     alignItems: 'center',
     flex: 1,
-  },
-
-  h3: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    top: 40,
-    textAlign: 'center',
-  },
-
-  card: {
-    width: 300,
-    height: 440,
-    marginTop: 80,
-    backgroundColor: '#FFEFF9',
-    marginBottom: 10,
-    borderRadius: 20,
-  },
-
-  elevation: {
-    shadowColor: '#000',
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.4,
-    shadowRadius: 3,
-    elevation: 5,
   },
 
   firstContent: {
@@ -99,19 +75,28 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
 
-  lastContent: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    top: 10,
-    textAlign: 'center',
-    marginHorizontal: 5,
-  },
-
   animation: {
     top: 150,
   },
 
-  lastPressable: {
-    top: 300,
+  button: {
+    top: 390,
+    width: 280,
+    height: 50,
+    backgroundColor: '#9D71CA',
+    borderWidth: 1,
+    borderColor: '##262626',
+    borderStyle: 'solid',
+    borderRadius: 10,
+    alignSelf: 'center',
+    bottom: 2,
+  },
+
+  buttonText: {
+    top: 3,
+    color: '#FFFFFF',
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });

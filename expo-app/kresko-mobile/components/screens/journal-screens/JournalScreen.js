@@ -11,9 +11,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function JournalScreen() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.h3}>Welcome to your personal journal</Text>
+      <Text style={styles.title}>My personal journal</Text>
       <Image
-        source={require('../../assets/images/personalJournal.png')}
+        source={require('../../../assets/images/personalJournal.png')}
         style={styles.image}
       />
       <TextInput style={styles.input} />
@@ -32,9 +32,9 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
 
-  h3: {
+  title: {
     fontFamily: 'Fascinate_400Regular',
-    fontSize: 24,
+    fontSize: 28,
     top: 40,
     textAlign: 'center',
   },

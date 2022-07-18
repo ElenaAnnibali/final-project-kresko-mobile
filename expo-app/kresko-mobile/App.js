@@ -7,7 +7,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AccountScreen from './components/screens/AccountScreen';
 import DailyScreen from './components/screens/DailyScreen';
 import HomeScreen from './components/screens/HomeScreen';
-import JournalScreen from './components/screens/JournalScreen';
+import EntryListScreen from './components/screens/journal-screens/EntryListScreen';
+import JournalScreen from './components/screens/journal-screens/JournalScreen';
+import NewJournalEntryScreen from './components/screens/journal-screens/NewJournalEntryScreen';
 import LoginScreen from './components/screens/Login';
 import AngryScreen from './components/screens/mood-screens/Angry';
 import FineScreen from './components/screens/mood-screens/Fine';
@@ -17,6 +19,7 @@ import MoodScreen from './components/screens/mood-screens/MoodScreen';
 import SadScreen from './components/screens/mood-screens/Sad';
 import TiredScreen from './components/screens/mood-screens/Tired';
 import ProfileScreen from './components/screens/ProfileScreen';
+import RecordsScreen from './components/screens/RecordsScreen';
 import RegisterScreen from './components/screens/Register';
 import FourthRelaxScreen from './components/screens/relax-screens/FourthRelaxScreen';
 import RelaxScreen from './components/screens/relax-screens/RelaxScreen';
@@ -31,6 +34,33 @@ const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 function MainNavigator() {
+  const homeIcon = ({ color }) => (
+    <MaterialIcons
+      name="home"
+      color={color}
+      size={29}
+      style={{ marginTop: 1 }}
+    />
+  );
+
+  const accountIcon = ({ color }) => (
+    <MaterialIcons
+      name="account-circle"
+      color={color}
+      size={29}
+      style={{ marginTop: 1 }}
+    />
+  );
+
+  const dailyIcon = ({ color }) => (
+    <MaterialIcons
+      name="opacity"
+      color={color}
+      size={29}
+      style={{ marginTop: 1 }}
+    />
+  );
+
   return (
     <Tab.Navigator
       screenOptions={{
@@ -62,14 +92,7 @@ function MainNavigator() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons
-              name="home"
-              color={color}
-              size={29}
-              style={{ marginTop: 1 }}
-            />
-          ),
+          tabBarIcon: homeIcon,
         }}
       />
       <Tab.Screen
@@ -77,14 +100,7 @@ function MainNavigator() {
         component={AccountScreen}
         options={{
           tabBarLabel: 'Account',
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons
-              name="account-circle"
-              color={color}
-              size={29}
-              style={{ marginTop: 1 }}
-            />
-          ),
+          tabBarIcon: accountIcon,
         }}
       />
       <Tab.Screen
@@ -92,14 +108,7 @@ function MainNavigator() {
         component={DailyScreen}
         options={{
           tabBarLabel: 'Daily',
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons
-              name="opacity"
-              color={color}
-              size={29}
-              style={{ marginTop: 1 }}
-            />
-          ),
+          tabBarIcon: dailyIcon,
         }}
       />
     </Tab.Navigator>
@@ -113,6 +122,7 @@ export default function App() {
         screenOptions={{
           headerShown: false,
         }}
+        initialRouteName="Home"
       >
         <Stack.Screen name="Register" component={RegisterScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
@@ -130,6 +140,12 @@ export default function App() {
         <Stack.Screen name="SecondRelax" component={SecondRelaxScreen} />
         <Stack.Screen name="ThirdRelax" component={ThirdRelaxScreen} />
         <Stack.Screen name="FourthRelax" component={FourthRelaxScreen} />
+        <Stack.Screen name="EntryList" component={EntryListScreen} />
+        <Stack.Screen
+          name="NewJournalEntry"
+          component={NewJournalEntryScreen}
+        />
+        <Stack.Screen name="Records" component={RecordsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

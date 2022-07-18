@@ -13,8 +13,6 @@ export default function AccountScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.homeScrollView}>
-        {/* first card */}
-        <Text style={styles.h3}>Username</Text>
         <View />
         {/* first card */}
         <Text style={styles.h2}>About you</Text>
@@ -39,7 +37,7 @@ export default function AccountScreen(props) {
         {/* third card */}
         <Text style={styles.h2}>Records</Text>
         <View style={[styles.thirdCard, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Relax')}>
+          <Pressable onPress={() => props.navigation.navigate('Records')}>
             <Image
               source={require('../../assets/images/records.png')}
               style={styles.journalImage}
