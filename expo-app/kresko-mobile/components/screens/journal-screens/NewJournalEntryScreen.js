@@ -1,43 +1,7 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
+// import Constants from 'expo-constants';
 import { useState } from 'react';
 import { Button, Image, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-export default function NewJournalEntryScreen({ route, navigation }) {
-  const [body, onChangeBody] = useState('');
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>My personal journal</Text>
-      <Image
-        source={require('../../../assets/images/personalJournal.png')}
-        style={styles.image}
-      />
-      <View>
-        <TextInput
-          style={styles.input}
-          onChangeText={onChangeBody}
-          placeholder="Write something here or describe it with emojis"
-          value={body}
-        />
-        <Button
-          title="Add to the journal"
-          onPress={() => {
-            route.params.onNewEntry({
-              body,
-              createdAt: new Date(),
-            });
-            // navigation.goBack();
-            navigation.navigate('EntryList');
-          }}
-        />
-        {/* <Button
-          title="go to my records"
-          onPress={() => navigation.navigate('EntryList')}
-        /> */}
-      </View>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -96,3 +60,65 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+
+// const { manifest } = Constants;
+
+// const apiBaseUrl =
+//   typeof manifest.packagerOpts === `object` && manifest.packagerOpts.dev
+//     ? `http://${manifest.debuggerHost.split(`:`).shift()}:3000/api/journal`
+//     : 'https://api.example.com';
+
+export default function NewJournalEntryScreen({ route, navigation }) {
+  const [body, setBody] = useState('');
+
+  // async function newJournalEntryHandler() {
+  //   const newJournalEntryResponse = await fetch(apiBaseUrl, {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       entry: body,
+  //     }),
+  //   });
+
+  //   const newJournalEntryResponseBody = await newJournalEntryResponse.json();
+
+  //   console.log('new journal entry response:', newJournalEntryResponseBody);
+  // }
+
+  const routeParam = () => {
+    route.params.onNewEntry({
+      body,
+      createdAt: new Date(),
+    });
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>My personal journal</Text>
+      <Image
+        source={require('../../../assets/images/personalJournal.png')}
+        style={styles.image}
+      />
+      <View>
+        <TextInput
+          style={styles.input}
+          onChangeText={setBody}
+          placeholder="Write something here or describe it with emojis"
+          value={body}
+        />
+        <Button
+          title="Add to the journal"
+          onPress={() => {
+            routeParam();
+            navigation.navigate('EntryList');
+            // newJournalEntryHandler().catch((error) => {
+            //   console.log(error);
+            // });
+          }}
+        />
+      </View>
+    </SafeAreaView>
+  );
+}

@@ -1,8 +1,33 @@
 import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+const styles = StyleSheet.create({
+  animationContainer: {
+    backgroundColor: '#EDDBFB',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+
+  animation: {
+    top: 120,
+  },
+
+  h3: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 24,
+    textAlign: 'center',
+  },
+
+  textContainer: {
+    flex: 1,
+    marginHorizontal: 10,
+    top: 40,
+    bottom: 40,
+  },
+});
 
 export default function FineScreen() {
   const animation = useRef(null);
@@ -30,29 +55,3 @@ export default function FineScreen() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  animationContainer: {
-    backgroundColor: '#EDDBFB',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-
-  animation: {
-    top: 120,
-  },
-
-  h3: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    textAlign: 'center',
-  },
-
-  textContainer: {
-    flex: 1,
-    marginHorizontal: 10,
-    top: 40,
-    bottom: 40,
-  },
-});

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import {
   Image,
   Pressable,
@@ -8,47 +7,6 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-export default function AccountScreen(props) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.homeScrollView}>
-        <View />
-        {/* first card */}
-        <Text style={styles.h2}>About you</Text>
-        <View style={[styles.firstCard, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Profile')}>
-            <Image
-              source={require('../../assets/images/aboutyou.png')}
-              style={styles.journalImage}
-            />
-          </Pressable>
-        </View>
-        {/* second card */}
-        <Text style={styles.h2}>Insights</Text>
-        <View style={[styles.secondCard, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Relax')}>
-            <Image
-              source={require('../../assets/images/insights.png')}
-              style={styles.journalImage}
-            />
-          </Pressable>
-        </View>
-        {/* third card */}
-        <Text style={styles.h2}>Records</Text>
-        <View style={[styles.thirdCard, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Records')}>
-            <Image
-              source={require('../../assets/images/records.png')}
-              style={styles.journalImage}
-            />
-          </Pressable>
-        </View>
-        <View style={styles.lastCard} />
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -168,3 +126,44 @@ const styles = StyleSheet.create({
     height: 150,
   },
 });
+
+export default function AccountScreen(props) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.homeScrollView}>
+        <View />
+        {/* first card */}
+        <Text style={styles.h2}>About you</Text>
+        <View style={[styles.firstCard, styles.elevation]}>
+          <Pressable onPress={() => props.navigation.navigate('Profile')}>
+            <Image
+              source={require('../../assets/images/aboutyou.png')}
+              style={styles.journalImage}
+            />
+          </Pressable>
+        </View>
+        {/* second card */}
+        <Text style={styles.h2}>Insights</Text>
+        <View style={[styles.secondCard, styles.elevation]}>
+          <Pressable onPress={() => props.navigation.navigate('Relax')}>
+            <Image
+              source={require('../../assets/images/insights.png')}
+              style={styles.journalImage}
+            />
+          </Pressable>
+        </View>
+        {/* third card */}
+        <Text style={styles.h2}>Records</Text>
+        <View style={[styles.thirdCard, styles.elevation]}>
+          <Pressable onPress={() => props.navigation.navigate('Records')}>
+            <Image
+              source={require('../../assets/images/records.png')}
+              style={styles.journalImage}
+            />
+          </Pressable>
+        </View>
+        <View style={styles.lastCard} />
+      </ScrollView>
+    </SafeAreaView>
+  );
+}

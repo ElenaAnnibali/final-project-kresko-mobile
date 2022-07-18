@@ -1,17 +1,4 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { StyleSheet, Text, View } from 'react-native';
-
-export default function EntryItem({ entry }) {
-  const { body, createdAt } = entry;
-  return (
-    <View style={styles.card}>
-      <Text style={styles.center}>{body}</Text>
-      <Text style={styles.right}>
-        {new Date(createdAt).toLocaleDateString()}
-      </Text>
-    </View>
-  );
-}
 
 const styles = StyleSheet.create({
   right: {
@@ -41,3 +28,15 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 });
+
+export default function EntryItem({ entry }) {
+  const { body, createdAt } = entry;
+  return (
+    <View style={styles.card}>
+      <Text style={styles.center}>{body}</Text>
+      <Text style={styles.right}>
+        {new Date(createdAt).toLocaleDateString()}
+      </Text>
+    </View>
+  );
+}

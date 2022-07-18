@@ -1,8 +1,32 @@
 import Constants from 'expo-constants';
 import { useState } from 'react';
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { Image, Pressable, StyleSheet, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EDDBFB',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+
+  h2: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 24,
+    fontWeight: 'bold',
+    top: 20,
+    textAlign: 'center',
+    marginBottom: 15,
+  },
+
+  moodImage: {
+    width: 80,
+    height: 80,
+    alignSelf: 'center',
+    marginVertical: 10,
+  },
+});
 
 const { manifest } = Constants;
 
@@ -159,28 +183,3 @@ export default function MoodScreen(props) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#EDDBFB',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-
-  h2: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    fontWeight: 'bold',
-    top: 20,
-    textAlign: 'center',
-    marginBottom: 15,
-  },
-
-  moodImage: {
-    width: 80,
-    height: 80,
-    alignSelf: 'center',
-    marginVertical: 10,
-  },
-});

@@ -1,5 +1,4 @@
 import LottieView from 'lottie-react-native';
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useEffect, useRef, useState } from 'react';
 import {
   Animated,
@@ -9,47 +8,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-export default function SecondRelaxScreen(props) {
-  const [entries, setEntries] = useState([[]]);
-
-  function onNewEntry(newEntry) {
-    setEntries([...entries, newEntry]);
-  }
-
-  const animationProgress = useRef(new Animated.Value(0));
-
-  useEffect(() => {
-    Animated.timing(animationProgress.current, {
-      toValue: 1,
-      duration: 5000,
-      easing: Easing.linear,
-      useNativeDriver: false,
-    }).start();
-  }, []);
-
-  return (
-    <SafeAreaView style={styles.animationContainer}>
-      <Text style={styles.firstContent}>Good job!</Text>
-      <Text style={styles.content}>How was it? Could you relax a little?</Text>
-      <Text style={styles.content}>
-        Let's write your thoughts down or picture them on your journal!
-      </Text>
-      <Text style={styles.content}>Let's go!</Text>
-      <LottieView
-        source={require('../../../assets/animations/others/prismo.json')}
-        progress={animationProgress.current}
-        style={styles.animation}
-      />
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => props.navigation.push('NewJournalEntry', { onNewEntry })}
-      >
-        <Text style={styles.buttonText}>Go to my personal journal</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   animationContainer: {
@@ -100,3 +58,44 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default function SecondRelaxScreen(props) {
+  const [entries, setEntries] = useState([[]]);
+
+  function onNewEntry(newEntry) {
+    setEntries([...entries, newEntry]);
+  }
+
+  const animationProgress = useRef(new Animated.Value(0));
+
+  useEffect(() => {
+    Animated.timing(animationProgress.current, {
+      toValue: 1,
+      duration: 5000,
+      easing: Easing.linear,
+      useNativeDriver: false,
+    }).start();
+  }, []);
+
+  return (
+    <SafeAreaView style={styles.animationContainer}>
+      <Text style={styles.firstContent}>Good job!</Text>
+      <Text style={styles.content}>How was it? Could you relax a little?</Text>
+      <Text style={styles.content}>
+        Let's write your thoughts down or picture them on your journal!
+      </Text>
+      <Text style={styles.content}>Let's go!</Text>
+      <LottieView
+        source={require('../../../assets/animations/others/prismo.json')}
+        progress={animationProgress.current}
+        style={styles.animation}
+      />
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => props.navigation.push('NewJournalEntry', { onNewEntry })}
+      >
+        <Text style={styles.buttonText}>Go to my personal journal</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+}

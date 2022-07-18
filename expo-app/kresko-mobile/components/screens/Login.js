@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { useNavigation } from '@react-navigation/native';
 import Constants from 'expo-constants';
 import { useState } from 'react';
@@ -11,6 +10,74 @@ import {
   TextInput,
   View,
 } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#EDDBFB',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+
+  scrollView: {
+    height: '40%',
+    width: '80%',
+    // margin: 5,
+    alignSelf: 'center',
+    // padding: 5,
+  },
+
+  title: {
+    top: 40,
+    fontSize: 40,
+    fontFamily: 'Fascinate_400Regular',
+    textAlign: 'center',
+    marginHorizontal: 5,
+  },
+
+  h3: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 20,
+    top: 20,
+  },
+
+  cloudImage: {
+    marginTop: 70,
+    marginBottom: 40,
+    width: 223.75,
+    height: 114,
+  },
+
+  input: {
+    height: 40,
+    borderBottomWidth: 1,
+    top: 10,
+  },
+
+  inputLast: {
+    height: 40,
+    borderBottomWidth: 1,
+    top: 10,
+    marginBottom: 40,
+  },
+
+  error: {
+    backgroundColor: '#2F0169',
+    color: '#FFFAE9',
+    fontFamily: 'Jost_400Regular',
+    fontSize: 20,
+    top: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    textAlign: 'center',
+    borderRadius: 10,
+    bottom: 10,
+  },
+
+  last: {
+    paddingVertical: 50,
+  },
+});
 
 // import { userContext } from '../../util/Context';
 
@@ -106,71 +173,3 @@ export default function LoginScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#EDDBFB',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-
-  scrollView: {
-    height: '40%',
-    width: '80%',
-    // margin: 5,
-    alignSelf: 'center',
-    // padding: 5,
-  },
-
-  title: {
-    top: 40,
-    fontSize: 40,
-    fontFamily: 'Fascinate_400Regular',
-    textAlign: 'center',
-    marginHorizontal: 5,
-  },
-
-  h3: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 20,
-    top: 20,
-  },
-
-  cloudImage: {
-    marginTop: 70,
-    marginBottom: 40,
-    width: 223.75,
-    height: 114,
-  },
-
-  input: {
-    height: 40,
-    borderBottomWidth: 1,
-    top: 10,
-  },
-
-  inputLast: {
-    height: 40,
-    borderBottomWidth: 1,
-    top: 10,
-    marginBottom: 40,
-  },
-
-  error: {
-    backgroundColor: '#2F0169',
-    color: '#FFFAE9',
-    fontFamily: 'Jost_400Regular',
-    fontSize: 20,
-    top: 20,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    textAlign: 'center',
-    borderRadius: 10,
-    bottom: 10,
-  },
-
-  last: {
-    paddingVertical: 50,
-  },
-});

@@ -8,22 +8,6 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function JournalScreen() {
-  return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>My personal journal</Text>
-      <Image
-        source={require('../../../assets/images/personalJournal.png')}
-        style={styles.image}
-      />
-      <TextInput style={styles.input} />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Add to the journal</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -80,3 +64,19 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
 });
+
+export default function JournalScreen() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>My personal journal</Text>
+      <Image
+        source={require('../../../assets/images/personalJournal.png')}
+        style={styles.image}
+      />
+      <TextInput style={styles.input} />
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Add to the journal</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import {
   Image,
   Pressable,
@@ -10,57 +9,6 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-export default function HomeScreen(props) {
-  const [entries, setEntries] = useState([]);
-
-  function onNewEntry(newEntry) {
-    setEntries([...entries, newEntry]);
-  }
-
-  return (
-    <SafeAreaView style={styles.container}>
-      <ScrollView style={styles.homeScrollView}>
-        {/* first card */}
-        <View style={[styles.subContainer, styles.elevation]}>
-          <Text style={styles.h3}>How are you feeling today?</Text>
-          <Pressable onPress={() => props.navigation.navigate('Mood')}>
-            <Text style={styles.moodSubtitle}>Let's check your mood!</Text>
-          </Pressable>
-        </View>
-        {/* second card */}
-        <View style={[styles.card, styles.elevation]}>
-          <Pressable
-            onPress={() =>
-              props.navigation.push('NewJournalEntry', { onNewEntry })
-            }
-          >
-            <Image
-              source={require('../../assets/images/journal.png')}
-              style={styles.journalImage}
-            />
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Your personal journal</Text>
-            </TouchableOpacity>
-          </Pressable>
-        </View>
-        {/* third card */}
-        <View style={[styles.card, styles.elevation]}>
-          <Pressable onPress={() => props.navigation.navigate('Relax')}>
-            <Image
-              source={require('../../assets/images/meditation.png')}
-              style={styles.journalImage}
-            />
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.buttonText}>Take a moment to relax</Text>
-            </TouchableOpacity>
-          </Pressable>
-        </View>
-        <View style={styles.lastCard} />
-      </ScrollView>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -153,3 +101,54 @@ const styles = StyleSheet.create({
     height: 150,
   },
 });
+
+export default function HomeScreen(props) {
+  const [entries, setEntries] = useState([]);
+
+  function onNewEntry(newEntry) {
+    setEntries([...entries, newEntry]);
+  }
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.homeScrollView}>
+        {/* first card */}
+        <View style={[styles.subContainer, styles.elevation]}>
+          <Text style={styles.h3}>How are you feeling today?</Text>
+          <Pressable onPress={() => props.navigation.navigate('Mood')}>
+            <Text style={styles.moodSubtitle}>Let's check your mood!</Text>
+          </Pressable>
+        </View>
+        {/* second card */}
+        <View style={[styles.card, styles.elevation]}>
+          <Pressable
+            onPress={() =>
+              props.navigation.push('NewJournalEntry', { onNewEntry })
+            }
+          >
+            <Image
+              source={require('../../assets/images/journal.png')}
+              style={styles.journalImage}
+            />
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Your personal journal</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </View>
+        {/* third card */}
+        <View style={[styles.card, styles.elevation]}>
+          <Pressable onPress={() => props.navigation.navigate('Relax')}>
+            <Image
+              source={require('../../assets/images/meditation.png')}
+              style={styles.journalImage}
+            />
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Take a moment to relax</Text>
+            </TouchableOpacity>
+          </Pressable>
+        </View>
+        <View style={styles.lastCard} />
+      </ScrollView>
+    </SafeAreaView>
+  );
+}

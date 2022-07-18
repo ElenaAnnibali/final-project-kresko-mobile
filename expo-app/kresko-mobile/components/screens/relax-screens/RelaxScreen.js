@@ -1,6 +1,5 @@
 import LottieView from 'lottie-react-native';
 import { useEffect, useRef } from 'react';
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import {
   Animated,
   Easing,
@@ -10,6 +9,41 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+
+const styles = StyleSheet.create({
+  animationContainer: {
+    backgroundColor: '#EDDBFB',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+
+  firstContent: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 24,
+    top: 40,
+    textAlign: 'center',
+  },
+
+  secondContent: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 24,
+    top: 60,
+    textAlign: 'center',
+  },
+
+  textContainer: {
+    flex: 1,
+    marginHorizontal: 10,
+  },
+
+  thirdContent: {
+    fontFamily: 'Jost_400Regular',
+    fontSize: 24,
+    bottom: 50,
+    textAlign: 'center',
+  },
+});
 
 export default function RelaxScreen(props) {
   // const animation = useRef(null);
@@ -48,38 +82,3 @@ export default function RelaxScreen(props) {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  animationContainer: {
-    backgroundColor: '#EDDBFB',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-  },
-
-  firstContent: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    top: 40,
-    textAlign: 'center',
-  },
-
-  secondContent: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    top: 60,
-    textAlign: 'center',
-  },
-
-  textContainer: {
-    flex: 1,
-    marginHorizontal: 10,
-  },
-
-  thirdContent: {
-    fontFamily: 'Jost_400Regular',
-    fontSize: 24,
-    bottom: 50,
-    textAlign: 'center',
-  },
-});

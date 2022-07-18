@@ -1,25 +1,5 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-export default function RecordsScreen(props) {
-  return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => props.navigation.navigate('EntryList')}
-      >
-        <Text style={styles.buttonText}>Go to journal records</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => props.navigation.navigate('EntryList')}
-      >
-        <Text style={styles.buttonText}>Go to mood records</Text>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -52,3 +32,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+export default function RecordsScreen(props) {
+  return (
+    <SafeAreaView style={styles.container}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => props.navigation.navigate('EntryList')}
+      >
+        <Text style={styles.buttonText}>Go to journal records</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => props.navigation.navigate('EntryList')}
+      >
+        <Text style={styles.buttonText}>Go to mood records</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+}
